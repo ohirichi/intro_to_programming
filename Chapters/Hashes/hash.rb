@@ -1,4 +1,4 @@
-# hash exercise 6: anagrams
+# hash exercise 6: anagrams, a solution with no hashes....
 words =  ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
           'fowl', 'veil', 'wolf', 'diet', 'vile', 'edit', 'tide',
           'flow', 'neon']
@@ -26,7 +26,25 @@ def anagrams(word1, word2)
   end
 end
 
+def anaarrays(array)
+result = []
+if array.length > 0
+  result.push(array.delete(array.first))
+  array.each do |x|
+    if anagrams(result.first,x)
+    result.push(x)
+    array.delete(x)
+    end
+  end
+  p result
+  anaarrays(array)
+end
+end
 
+anaarrays(words)
+
+  
+    
     
 
       
